@@ -6,12 +6,16 @@ public class MoodAnalyser {
         message = msg;
     }
 
-    public String analyseMood(String message) {
-        if (message.contains("SAD")) {
-            return "SAD";
-        }
-        else {
-            return "HAPPY";
+    public String analyseMood() throws MoodAnalyserException {
+        try {
+            if (message.contains("SAD")) {
+                return "SAD";
+            } else {
+                return "HAPPY";
+            }
+        } catch (Exception e) {
+
+            throw new MoodAnalyserException("Enter message");
         }
 
     }
